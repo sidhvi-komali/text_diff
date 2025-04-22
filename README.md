@@ -1,7 +1,7 @@
 ## Text_Diff
 
 ### To deploy, download and run this in your local terminal:
-### To locally install it -
+### Locally install flask -
 #### pip install flask
-### To create a temp. server -
+### Create a temp. server -
 #### python3 app.py

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Diff Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+        }
+        textarea {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+        .result {
+            white-space: pre-wrap;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        .insert {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .delete {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 2px 4px;
+            border-radius: 3px;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Diff Viewer</h1>
+    <form method="post">
+        <label>Original Text:</label><br>
+        <textarea name="text1" required>{{ text1 }}</textarea><br>
+        <label>Modified Text:</label><br>
+        <textarea name="text2" required>{{ text2 }}</textarea><br>
+        <input type="submit" value="Compare">
+    </form>
+
+    {% if result %}
+    <h2>Highlighted Differences</h2>
+    <div class="result">
+        {{ result | safe }}
+    </div>
+    {% endif %}
+</body>
+</html>
